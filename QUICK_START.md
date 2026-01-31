@@ -22,10 +22,10 @@ This will install all required packages:
 
 ## Step 2: Configure API URL (Optional)
 
-The app is configured to connect to a backend API. By default, it expects the backend at:
-- `http://localhost:3000/api`
+The app is configured to connect to the production backend API at:
+- `https://mushbackend-production.up.railway.app/api`
 
-If your backend runs on a different URL, create a `.env` file in the project root:
+If you need to use a different backend URL (e.g., for local development), create a `.env` file in the project root:
 
 ```env
 VITE_API_URL=http://localhost:3000/api
