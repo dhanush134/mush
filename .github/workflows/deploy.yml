@@ -29,7 +29,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'  # Updated from '18' to '22' for Vite compatibility
-          cache: 'npm'
+          # Note: Cache is optional - if package-lock.json path can't be resolved, 
+          # the build will continue without caching (slightly slower but still works)
 
       - name: Install dependencies
         run: npm ci
