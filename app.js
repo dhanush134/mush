@@ -1,5 +1,5 @@
 let username = localStorage.getItem("username");
-const API = "https://YOUR-RAILWAY-URL.up.railway.app";
+const API = "https://mushbackend-production.up.railway.app/";
 
 function login() {
   username = document.getElementById("username").value;
