@@ -30,20 +30,17 @@ jobs:
         with:
           node-version: '22'  # Updated from '18' to '22' for Vite compatibility
           cache: 'npm'
-          cache-dependency-path: 'frontend/package-lock.json'  # Path relative to repo root
+          cache-dependency-path: 'package-lock.json'  # File is at repo root (frontend/ is the repo)
 
       - name: Install dependencies
-        working-directory: ./frontend
         run: npm ci
 
       - name: Build
-        working-directory: ./frontend
         run: npm run build
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://mushbackend-production.up.railway.app/api' }}
 
       - name: Create .nojekyll file
-        working-directory: ./frontend
         run: touch dist/.nojekyll
 
       - name: Setup Pages
@@ -52,7 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './frontend/dist'
+          path: './dist'
 
   deploy:
     environment:
