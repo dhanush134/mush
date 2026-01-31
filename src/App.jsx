@@ -5,7 +5,7 @@ export default function App() {
   const [batches, setBatches] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/batches')
+    fetch('https://mushbackend-production.up.railway.app/batches')
       .then(res => res.json())
       .then(setBatches)
   }, [])
