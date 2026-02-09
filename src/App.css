@@ -327,6 +327,33 @@ h3 {
   gap: 12px;
 }
 
+.observations-list-scrollable {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.observations-list-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.observations-list-scrollable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.observations-list-scrollable::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.observations-list-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .observation-item {
   display: flex;
   justify-content: space-between;

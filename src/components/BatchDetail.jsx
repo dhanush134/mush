@@ -123,12 +123,12 @@ export default function BatchDetail() {
         {activeTab === 'overview' && (
           <div className="overview-tab">
             <div className="section">
-              <h2>Recent Observations</h2>
+              <h2>All Observations</h2>
               {observations.length === 0 ? (
                 <p className="empty">No observations yet. Log your first observation.</p>
               ) : (
-                <div className="observations-list">
-                  {observations.slice(-5).reverse().map((obs) => (
+                <div className="observations-list-scrollable">
+                  {observations.slice().reverse().map((obs) => (
                     <div key={obs.observation_id} className="observation-item">
                       <div className="obs-date">
                         {format(new Date(obs.date), 'MMM d, yyyy')}
